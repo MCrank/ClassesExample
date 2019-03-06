@@ -1,0 +1,16 @@
+﻿using System;
+
+namespace ClassesExample.Legos.Legs
+{
+    class PegLeg : LegsBase
+    {
+        public PegLeg(Length legLength) : base(legLength, Colors.Tan)
+        {   
+        }
+
+        public override void Jump()
+        {
+            Console.WriteLine($"The {(Hairy ? "Hairy" : "")}peg legs don't jump.");
+        }
+    }
+}

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ClassesExample.Legos;
+using ClassesExample.Legos.Heads;
+using ClassesExample.Legos.Legs;
+using ClassesExample.Legos.Torsos;
+using System;
 
 namespace ClassesExample
 {
@@ -7,7 +11,7 @@ namespace ClassesExample
     class Program
     {
         #region Fields
-        string _myData = "This is just for me to use";
+        // string _myData = "This is just for me to use";
 
         #endregion
 
@@ -30,11 +34,27 @@ namespace ClassesExample
         // Cannot call non static methods
         static void Main(string[] args)
         {
-            var taffy = new Candy("Orange", "Saltwater Taffy", CandyType.Stretchy);
+            //var taffy = new Candy("Orange", "Saltwater Taffy", CandyType.Stretchy);
 
-            taffy.SetRating(7, "This is guud!");
+            //taffy.SetRating(7, "This is guud!");
             
-            Console.WriteLine(taffy);
+            //Console.WriteLine(taffy);
+
+            var myDogHead = new Dog();
+            myDogHead.Talk();
+
+            var martinHead = new Bald();
+            var atronautHead = new Astronaut();
+
+            var fitTorso = new FitTorso(2, Sex.Female, Colors.Freckles);
+            fitTorso.Crunch(12);
+
+            var adamsLegs = new OrangeLegs(Length.Short);
+
+            var myMiniFig = new MiniFigure("Adam", martinHead, fitTorso, adamsLegs);
+
+            myMiniFig.Greet();
+
             Console.ReadLine();
 
         }
